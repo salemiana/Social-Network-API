@@ -4,10 +4,8 @@ const ThoughtSchema = new Schema({
   thoughtText: {
     type: String,
     Required: "thoughtText is required",
-    validate: [
-      ({ length }) => (length = (1, 280)),
-      "Password should be 1 to 280 characters.",
-    ],
+    minLength: 1,
+    maxLength: 280,
   },
   createdAt: {
     type: Date,

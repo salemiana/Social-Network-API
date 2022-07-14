@@ -5,14 +5,14 @@ const UserSchema = new Schema({
     type: String,
     unique: true,
     trim: true,
-    Required: "username is required",
+    required: "username is required",
   },
 
   email: {
     type: String,
     unique: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
-    Required: "email is required",
+    required: "email is required",
   },
 
   thoughts: [{ type: Schema.Types.ObjectId, ref: "Thought" }],

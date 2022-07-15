@@ -5,14 +5,15 @@ const UserSchema = new Schema({
     type: String,
     unique: true,
     trim: true,
-    required: "username is required",
+    required: true,
   },
 
   email: {
     type: String,
     unique: true,
+    required: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
-    required: "email is required",
+    
   },
 
   thoughts: [{ type: Schema.Types.ObjectId, ref: "Thought" }],
@@ -22,7 +23,8 @@ const UserSchema = new Schema({
 
   {
     toJSON: {
-      virtuals: true
+      virtuals: true,
+      getters: true
     },
     id: false
   });

@@ -1,4 +1,6 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
+const dateFormat = require('../utils/dateFormat');
+
 
 //the reaction field's subdocument schema in the Thought model.
 const reactionSchema = new Schema(
@@ -53,7 +55,7 @@ const ThoughtSchema = new Schema(
     },
     //replies
     reactions: [reactionSchema],
-  },
+  }, 
   {
     toJSON: {
       virtuals: true,

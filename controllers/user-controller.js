@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User } = require("../Models");
 
 const userController = {
   //get all users
@@ -58,6 +58,8 @@ getUserById({ params }, res) {
       .then(dbUserData => res.json(dbUserData))
       .catch(err => res.json(err));
   }
+
+  //update a user
 };
 
 module.exports = userController;
